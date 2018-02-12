@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Twitter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/main.css" />
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+
+  <body>
+    <input type='text' class='my-name'/>
+    <button class='connect-button'>Se connecter</button>
+
+
+
+
+
+
+
+    
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      var socket = null;
+
+      $(document).ready(function() {
+        initClicks();
+      });
+
+      function initClicks() {
+        $('.connect-button').click(function() {
+          initConnection($('.my-name').val());
+          initListeners();
+        });
+      }
+
+      function initConnection(name) {
+        // (2) la connexion se fait qu'une seule fois par client
+        // Une connexion `socket` est maintenue ouverte entre le serveur et le client
+        socket = io.connect('http://localhost:3000');
+
+        // (4) le client déclenche l'évènement `identification` et transmet son `name`
+        socket.emit('identification', {name: name});
+      }
+
+      function initListeners() {
+        // (5) la création de l'écouteur `new_connection` ne doit se faire qu'une seule fois
+        socket.on('new_connection', function(data) {
+          console.log(data.name + ' has joined');
+        });
+
+        // d'autres écouteurs peuvent être créés ici `socket.on(...);`
+      }
+    </script>
+  </body>
+</html>
