@@ -1,62 +1,101 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Twitter</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" media="screen" href="/css/main.css" />
+<% include partials/header.ejs %>
+    <% include partials/menu.ejs %>
+    <% include partials/modal.ejs %>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    
-
-  <body>
-    <input type='text' class='my-name'/>
-    <button class='connect-button'>Se connecter</button>
-
-
-
-
-
-
-
-    
+        <div class="container">
+            <div class="page">
+              <div class="blocInputTweet" >
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="thumnail">
+                            <img class="picHome" src="https://media-exp2.licdn.com/mpr/mpr/shrinknp_200_200/AAIA_wDGAAAAAQAAAAAAAAp0AAAAJGFlNWJkMzFhLWQ2ZWYtNGQ4Yy1iOWU5LTZkZjNkYWI3OTM0NA.jpg"
+                            />
+                        </div>
+                        <div class="blocRight">
+                            <input class="form-control form-control-lg" type="text" placeholder="Quoi de neuf" class='my-name'>
+                            <button type="button" class="btn btn-tweet" href="#" data-toggle="modal" data-target="#modalTwitter">Tweeter</button>
+                            
+                        </div>
+                    </div>
+                </div>   
+                </div>
+                <div class="blocTweets" >
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul class="list-group">
+                            <li class="list-group-item justify-content-between">
+                                <div class="row">
+                                    <div class="p-2 thumbnail col-md-1">
+                                        <img class="img-fluid picHome" src='https://media-exp2.licdn.com/media-proxy/ext?w=800&h=800&hash=4ThhLqKC9HWxXlTmAgZ1An2F31Q%3D&ora=1%2CaFBCTXdkRmpGL2lvQUFBPQ%2CxAVta5g-0R6rhRoOww4ysOCGpFu48UVSVofOAW__H3D0vsvTPyr2PNjccbqio1gZOyEFkAQkOeKs'
+                                            alt='photo' />
+                                    </div>
+                                    <div class="blocRight col-md-11">
+                                        <div class="p-2">
+                                            <h2>
+                                                Farid Safi
+                                            </h2>
+                                        </div>
+                                        <div class="p-2">
+                                            <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la
+                                                mise en page avant impression. Le Lorem Ipsum est le faux texte standard
+                                                de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla
+                                                ensemble des morceaux de texte pour réaliser un livre spécimen de polices
+                                                de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté
+                                                à la bureautique informatique, sans que son contenu n'en soit modifié. Il
+                                                a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset
+                                                contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion
+                                                dans des applications de mise en page de texte, comme Aldus PageMaker.</p>
+                                            <a href="#">un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre
+                                                spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles,
+                                                mais s'est aussi adapté à la bureautique informatique, sans que son contenu
+                                                n'en
+                                            </a>
+                                            <div class=""><i class="far fa-heart fa-lg"></i></div>
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item justify-content-between">
+                                <div class="row">
+                                    <div class="p-2 thumbnail col-md-1">
+                                        <img class="img-fluid picHome" src='https://pbs.twimg.com/profile_images/856528381592170496/MwzqeO1j_400x400.jpg' alt='photo'
+                                        />
+                                    </div>
+                                    <div class="blocRight col-md-11">
+                                        <div class="p-2">
+                                            <h2>
+                                                Farid Safi
+                                            </h2>
+                                        </div>
+                                        <div class="p-2">
+                                            <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la
+                                                mise en page avant impression. Le Lorem Ipsum est le faux texte standard
+                                                de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla
+                                                ensemble des morceaux de texte pour réaliser un livre spécimen de polices
+                                                de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté
+                                                à la bureautique informatique, sans que son contenu n'en soit modifié. Il
+                                                a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset
+                                                contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion
+                                                dans des applications de mise en page de texte, comme Aldus PageMaker.</p>
+                                            <a href="#">un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre
+                                                spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles,
+                                                mais s'est aussi adapté à la bureautique informatique, sans que son contenu
+                                                n'en
+                                            </a>
+                                            <div class=""><i class="far fa-heart fa-lg"></i></div>
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
     <script src="/socket.io/socket.io.js"></script>
-    <script>
-      var socket = null;
+    <script src = "<% include clientScript.js %>"></script>
 
-      $(document).ready(function() {
-        initClicks();
-      });
-
-      function initClicks() {
-        $('.connect-button').click(function() {
-          initConnection($('.my-name').val());
-          initListeners();
-        });
-      }
-
-      function initConnection(name) {
-        // (2) la connexion se fait qu'une seule fois par client
-        // Une connexion `socket` est maintenue ouverte entre le serveur et le client
-        socket = io.connect('http://localhost:3000');
-
-        // (4) le client déclenche l'évènement `identification` et transmet son `name`
-        socket.emit('identification', {name: name});
-      }
-
-      function initListeners() {
-        // (5) la création de l'écouteur `new_connection` ne doit se faire qu'une seule fois
-        socket.on('new_connection', function(data) {
-          console.log(data.name + ' has joined');
-        });
-
-        // d'autres écouteurs peuvent être créés ici `socket.on(...);`
-      }
-    </script>
-  </body>
-</html>
+    <% include partials/footer.ejs %>
