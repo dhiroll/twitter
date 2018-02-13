@@ -15,7 +15,7 @@
                             <div class="col-md-11">
                                 <form>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="shortTweetbox" placeholder="Quoi de neuf ?"/>
+                                        <input type="text" class="form-control" id="shortTweetbox" placeholder="Quoi de neuf ?" />
                                         <span class="includePhotoTweet-shorten">
                                             <i class="far fa-image fa-lg"></i>
                                         </span>
@@ -25,7 +25,7 @@
                         </div>
 
                     </div>
-                    <div class="blocInputTweet d-none">
+                    <div class="blocInputTweet">
                         <div class="row">
                             <div class="col-md-1">
                                 <div class="thumnail">
@@ -34,9 +34,9 @@
                                 </div>
                             </div>
                             <div class="col-md-11">
-                                <form>
+                                <form class="formTwitter">
                                     <div class="form-group">
-                                        <textarea class="form-control" id="twitterTextarea" rows="3" maxlength="280" placeholder=" Quoi de neuf ?"></textarea>
+                                        <textarea class="twitterTextarea form-control" rows="3" maxlength="280" placeholder=" Quoi de neuf ?"></textarea>
                                     </div>
                                 </form>
                             </div>
@@ -47,13 +47,30 @@
                                 <span class="includePhotoTweet">
                                     <i class="far fa-image fa-lg"></i>
                                 </span>
-                                <button type="button" class="btn btn-tweet right" href="#" data-toggle="modal" data-target="#modalTwitter">Tweeter</button>
+                                <button type="button" class="tweet btn btn-tweet right" href="#">Tweeter</button>
                             </div>
                         </div>
                     </div>
                     <div class="blocTweets">
                         <div class="row">
                             <div class="col-md-12">
+                                <ul class='list-group messages'>
+                                    <li class="list-group-item justify-content-between">
+                                        <div class="row">
+                                            <div class="p-2 thumbnail col-md-1 insertImage">
+                                                <!-- Image -->
+                                            </div>
+                                            <div class="blocRight col-md-11">
+                                                <div class="p-2 insertTitle">
+                                                    <!-- Title -->
+                                                </div>
+                                                <div class="p-2 insertTweet">
+                                                    <!-- Tweet -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
                                 <ul class="list-group">
                                     <li class="list-group-item justify-content-between">
                                         <div class="row">
@@ -70,18 +87,9 @@
                                                 <div class="p-2">
                                                     <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition
                                                         et la mise en page avant impression. Le Lorem Ipsum est le faux texte
-                                                        standard de l'imprimerie depuis les années 1500, quand un peintre
-                                                        anonyme assembla ensemble des morceaux de texte pour réaliser un
-                                                        livre spécimen de polices de texte. Il n'a pas fait que survivre
-                                                        cinq siècles, mais s'est aussi adapté à la bureautique informatique,
-                                                        sans que son contenu n'en soit modifié. Il a été popularisé dans
-                                                        les années 1960 grâce à la vente de feuilles Letraset contenant des
-                                                        passages du Lorem Ipsum, et, plus récemment, par son inclusion dans
                                                         des applications de mise en page de texte, comme Aldus PageMaker.</p>
                                                     <a href="#">un peintre anonyme assembla ensemble des morceaux de texte pour réaliser
-                                                        un livre spécimen de polices de texte. Il n'a pas fait que survivre
-                                                        cinq siècles, mais s'est aussi adapté à la bureautique informatique,
-                                                        sans que son contenu n'en
+                                                        utenu n'en
                                                     </a>
                                                 </div>
                                                 <div class="">
@@ -100,24 +108,14 @@
                                             <div class="blocRight col-md-11">
                                                 <div class="p-2">
                                                     <h2>
-                                                        Farid Safi
+                                                        Le Reacteur
                                                     </h2>
                                                 </div>
                                                 <div class="p-2">
-                                                    <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition
-                                                        et la mise en page avant impression. Le Lorem Ipsum est le faux texte
-                                                        standard de l'imprimerie depuis les années 1500, quand un peintre
-                                                        anonyme assembla ensemble des morceaux de texte pour réaliser un
-                                                        livre spécimen de polices de texte. Il n'a pas fait que survivre
-                                                        cinq siècles, mais s'est aussi adapté à la bureautique informatique,
-                                                        sans que son contenu n'en soit modifié. Il a été popularisé dans
-                                                        les années 1960 grâce à la vente de feuilles Letraset contenant des
-                                                        passages du Lorem Ipsum, et, plus récemment, par son inclusion dans
+                                                    <p>Le Lorem Ipsum est simplement du faux texte employé dans la compositio
                                                         des applications de mise en page de texte, comme Aldus PageMaker.</p>
                                                     <a href="#">un peintre anonyme assembla ensemble des morceaux de texte pour réaliser
                                                         un livre spécimen de polices de texte. Il n'a pas fait que survivre
-                                                        cinq siècles, mais s'est aussi adapté à la bureautique informatique,
-                                                        sans que son contenu n'en
                                                     </a>
                                                 </div>
                                                 <div class="card">
@@ -133,8 +131,6 @@
                                                 <div class="">
                                                     <i class="far fa-heart fa-lg"></i>
                                                 </div>
-
-
                                             </div>
                                         </div>
                                     </li>
@@ -145,6 +141,39 @@
                 </div>
             </div>
             <script src="/socket.io/socket.io.js"></script>
-            <script src="<% include clientScript.js %>"></script>
+            <script>
+                $(document).ready(function () {
 
+                    $(".blocInputTweet").hide();
+                    var socket = io.connect('http://localhost:3000');
+                    $('button.tweet').click(function () {
+                        console.log("clicked");
+                        var name = 'Xavier';
+                        var message = $("textarea.twitterTextarea").val();
+                        socket.emit('send_message', {
+                            message: message
+                        });
+
+                    });
+                    socket.on('new_message', function (data) {
+                        var image =
+                            "<img class='img-fluid picHome' src='https://media-exp2.licdn.com/mpr/mpr/shrinknp_200_200/AAIA_wDGAAAAAQAAAAAAAAp0AAAAJGFlNWJkMzFhLWQ2ZWYtNGQ4Yy1iOWU5LTZkZjNkYWI3OTM0NA.jpg'alt='photo' />";
+                        var title = " <h2>Xavier Colombel </h2>";
+                        var tweetText = "<p>" + data.message + "<a href='#'></a></p>";
+                        var likes = "<div class='heart'><i class='far fa-heart fa-lg'></i></div>";
+
+                        $('.insertImage').append(image);
+                        $('.insertTitle').append(title);
+                        $('.insertTweet').append(tweetText, likes);
+
+                    });
+
+                    $("#shortTweetbox").click(function () {
+                        $(".blocInputTweet-shorten").hide();
+                        $(".blocInputTweet").show();
+                    });
+
+
+                });
+            </script>
             <% include partials/footer.ejs %>
