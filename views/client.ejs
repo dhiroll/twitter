@@ -1,101 +1,150 @@
 <% include partials/header.ejs %>
     <% include partials/menu.ejs %>
-    <% include partials/modal.ejs %>
+        <% include partials/modal.ejs %>
 
-        <div class="container">
-            <div class="page">
-              <div class="blocInputTweet" >
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="thumnail">
-                            <img class="picHome" src="https://media-exp2.licdn.com/mpr/mpr/shrinknp_200_200/AAIA_wDGAAAAAQAAAAAAAAp0AAAAJGFlNWJkMzFhLWQ2ZWYtNGQ4Yy1iOWU5LTZkZjNkYWI3OTM0NA.jpg"
-                            />
+            <div class="container">
+                <div class="page">
+                    <div class="blocInputTweet-shorten">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <div class="thumnail">
+                                    <img class="picHome-medium" src="https://media-exp2.licdn.com/mpr/mpr/shrinknp_200_200/AAIA_wDGAAAAAQAAAAAAAAp0AAAAJGFlNWJkMzFhLWQ2ZWYtNGQ4Yy1iOWU5LTZkZjNkYWI3OTM0NA.jpg"
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-md-11">
+                                <form>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="shortTweetbox" placeholder="Quoi de neuf ?"/>
+                                        <span class="includePhotoTweet-shorten">
+                                            <i class="far fa-image fa-lg"></i>
+                                        </span>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
-                        <div class="blocRight">
-                            <input class="form-control form-control-lg" type="text" placeholder="Quoi de neuf" class='my-name'>
-                            <button type="button" class="btn btn-tweet" href="#" data-toggle="modal" data-target="#modalTwitter">Tweeter</button>
-                            
+
+                    </div>
+                    <div class="blocInputTweet d-none">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <div class="thumnail">
+                                    <img class="picHome-medium" src="https://media-exp2.licdn.com/mpr/mpr/shrinknp_200_200/AAIA_wDGAAAAAQAAAAAAAAp0AAAAJGFlNWJkMzFhLWQ2ZWYtNGQ4Yy1iOWU5LTZkZjNkYWI3OTM0NA.jpg"
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-md-11">
+                                <form>
+                                    <div class="form-group">
+                                        <textarea class="form-control" id="twitterTextarea" rows="3" maxlength="280" placeholder=" Quoi de neuf ?"></textarea>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="offset-md-1"></div>
+                            <div class="col-md-11">
+                                <span class="includePhotoTweet">
+                                    <i class="far fa-image fa-lg"></i>
+                                </span>
+                                <button type="button" class="btn btn-tweet right" href="#" data-toggle="modal" data-target="#modalTwitter">Tweeter</button>
+                            </div>
                         </div>
                     </div>
-                </div>   
-                </div>
-                <div class="blocTweets" >
-                <div class="row">
-                    <div class="col-md-12">
-                        <ul class="list-group">
-                            <li class="list-group-item justify-content-between">
-                                <div class="row">
-                                    <div class="p-2 thumbnail col-md-1">
-                                        <img class="img-fluid picHome" src='https://media-exp2.licdn.com/media-proxy/ext?w=800&h=800&hash=4ThhLqKC9HWxXlTmAgZ1An2F31Q%3D&ora=1%2CaFBCTXdkRmpGL2lvQUFBPQ%2CxAVta5g-0R6rhRoOww4ysOCGpFu48UVSVofOAW__H3D0vsvTPyr2PNjccbqio1gZOyEFkAQkOeKs'
-                                            alt='photo' />
-                                    </div>
-                                    <div class="blocRight col-md-11">
-                                        <div class="p-2">
-                                            <h2>
-                                                Farid Safi
-                                            </h2>
+                    <div class="blocTweets">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <ul class="list-group">
+                                    <li class="list-group-item justify-content-between">
+                                        <div class="row">
+                                            <div class="p-2 thumbnail col-md-1">
+                                                <img class="img-fluid picHome" src='https://media-exp2.licdn.com/media-proxy/ext?w=800&h=800&hash=4ThhLqKC9HWxXlTmAgZ1An2F31Q%3D&ora=1%2CaFBCTXdkRmpGL2lvQUFBPQ%2CxAVta5g-0R6rhRoOww4ysOCGpFu48UVSVofOAW__H3D0vsvTPyr2PNjccbqio1gZOyEFkAQkOeKs'
+                                                    alt='photo' />
+                                            </div>
+                                            <div class="blocRight col-md-11">
+                                                <div class="p-2">
+                                                    <h2>
+                                                        Farid Safi
+                                                    </h2>
+                                                </div>
+                                                <div class="p-2">
+                                                    <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition
+                                                        et la mise en page avant impression. Le Lorem Ipsum est le faux texte
+                                                        standard de l'imprimerie depuis les années 1500, quand un peintre
+                                                        anonyme assembla ensemble des morceaux de texte pour réaliser un
+                                                        livre spécimen de polices de texte. Il n'a pas fait que survivre
+                                                        cinq siècles, mais s'est aussi adapté à la bureautique informatique,
+                                                        sans que son contenu n'en soit modifié. Il a été popularisé dans
+                                                        les années 1960 grâce à la vente de feuilles Letraset contenant des
+                                                        passages du Lorem Ipsum, et, plus récemment, par son inclusion dans
+                                                        des applications de mise en page de texte, comme Aldus PageMaker.</p>
+                                                    <a href="#">un peintre anonyme assembla ensemble des morceaux de texte pour réaliser
+                                                        un livre spécimen de polices de texte. Il n'a pas fait que survivre
+                                                        cinq siècles, mais s'est aussi adapté à la bureautique informatique,
+                                                        sans que son contenu n'en
+                                                    </a>
+                                                </div>
+                                                <div class="">
+                                                    <i class="far fa-heart fa-lg"></i>
+                                                </div>
+
+                                            </div>
                                         </div>
-                                        <div class="p-2">
-                                            <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la
-                                                mise en page avant impression. Le Lorem Ipsum est le faux texte standard
-                                                de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla
-                                                ensemble des morceaux de texte pour réaliser un livre spécimen de polices
-                                                de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté
-                                                à la bureautique informatique, sans que son contenu n'en soit modifié. Il
-                                                a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset
-                                                contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion
-                                                dans des applications de mise en page de texte, comme Aldus PageMaker.</p>
-                                            <a href="#">un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre
-                                                spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles,
-                                                mais s'est aussi adapté à la bureautique informatique, sans que son contenu
-                                                n'en
-                                            </a>
-                                            <div class=""><i class="far fa-heart fa-lg"></i></div>
+                                    </li>
+                                    <li class="list-group-item justify-content-between">
+                                        <div class="row">
+                                            <div class="p-2 thumbnail col-md-1">
+                                                <img class="img-fluid picHome" src='https://pbs.twimg.com/profile_images/856528381592170496/MwzqeO1j_400x400.jpg' alt='photo'
+                                                />
+                                            </div>
+                                            <div class="blocRight col-md-11">
+                                                <div class="p-2">
+                                                    <h2>
+                                                        Farid Safi
+                                                    </h2>
+                                                </div>
+                                                <div class="p-2">
+                                                    <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition
+                                                        et la mise en page avant impression. Le Lorem Ipsum est le faux texte
+                                                        standard de l'imprimerie depuis les années 1500, quand un peintre
+                                                        anonyme assembla ensemble des morceaux de texte pour réaliser un
+                                                        livre spécimen de polices de texte. Il n'a pas fait que survivre
+                                                        cinq siècles, mais s'est aussi adapté à la bureautique informatique,
+                                                        sans que son contenu n'en soit modifié. Il a été popularisé dans
+                                                        les années 1960 grâce à la vente de feuilles Letraset contenant des
+                                                        passages du Lorem Ipsum, et, plus récemment, par son inclusion dans
+                                                        des applications de mise en page de texte, comme Aldus PageMaker.</p>
+                                                    <a href="#">un peintre anonyme assembla ensemble des morceaux de texte pour réaliser
+                                                        un livre spécimen de polices de texte. Il n'a pas fait que survivre
+                                                        cinq siècles, mais s'est aussi adapté à la bureautique informatique,
+                                                        sans que son contenu n'en
+                                                    </a>
+                                                </div>
+                                                <div class="card">
+                                                    <img class="card-img-top" src="https://pbs.twimg.com/media/DVqzsPrW4AAlB-G.jpg" alt="Card image cap">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">CReact Native Authentication in Depth</h5>
+                                                        <p class="card-text">
+                                                            Implementing real world production tested multi factor authentication in a React Native application
+                                                        </p>
+                                                        <a href="#" class="">medium.com</a>
+                                                    </div>
+                                                </div>
+                                                <div class="">
+                                                    <i class="far fa-heart fa-lg"></i>
+                                                </div>
+
+
+                                            </div>
                                         </div>
-                                       
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="list-group-item justify-content-between">
-                                <div class="row">
-                                    <div class="p-2 thumbnail col-md-1">
-                                        <img class="img-fluid picHome" src='https://pbs.twimg.com/profile_images/856528381592170496/MwzqeO1j_400x400.jpg' alt='photo'
-                                        />
-                                    </div>
-                                    <div class="blocRight col-md-11">
-                                        <div class="p-2">
-                                            <h2>
-                                                Farid Safi
-                                            </h2>
-                                        </div>
-                                        <div class="p-2">
-                                            <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la
-                                                mise en page avant impression. Le Lorem Ipsum est le faux texte standard
-                                                de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla
-                                                ensemble des morceaux de texte pour réaliser un livre spécimen de polices
-                                                de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté
-                                                à la bureautique informatique, sans que son contenu n'en soit modifié. Il
-                                                a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset
-                                                contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion
-                                                dans des applications de mise en page de texte, comme Aldus PageMaker.</p>
-                                            <a href="#">un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre
-                                                spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles,
-                                                mais s'est aussi adapté à la bureautique informatique, sans que son contenu
-                                                n'en
-                                            </a>
-                                            <div class=""><i class="far fa-heart fa-lg"></i></div>
-                                        </div>
-                                       
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        </div>
-    <script src="/socket.io/socket.io.js"></script>
-    <script src = "<% include clientScript.js %>"></script>
+            <script src="/socket.io/socket.io.js"></script>
+            <script src="<% include clientScript.js %>"></script>
 
-    <% include partials/footer.ejs %>
+            <% include partials/footer.ejs %>

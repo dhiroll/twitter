@@ -1,53 +1,109 @@
-body{
-    background-color:#E6ECF0;
+body {
+    background-color: #E6ECF0;
 }
-.menuTwitter{
+
+.modal-header .close {
+    padding: 0;
+    margin: 0;
+}
+
+.center {
+    text-align: center;
+}
+
+.menuTwitter {
     background-color: white;
 }
-.nav-item .active{
+
+.nav-item .active {
     border-bottom: 2px solid #5558C8;
     background-color: red;
 }
-.page{
+
+.page {
     margin-top: 30px;
     margin-bottom: 30px;
     background-color: white;
 }
-.btn-tweet{
+
+.btn-tweet {
     background-color: #7679D3;
     border-radius: 20px;
     color: white;
 }
-.btn-tweet a{
-   text-decoration: none;
+
+.btn-tweet a {
+    text-decoration: none;
     color: white;
 }
-.fa-twitter{
+
+.fa-twitter {
     color: #1BA1F2;
 }
-.fa-home{
-    color : #5558C8;
+
+.fa-home,
+.fa-image {
+    color: #5558C8;
 }
-.accueil{
-    color : #5558C8;
+
+.accueil {
+    color: #5558C8;
     font-size: 14px;
-    padding-left : 15px;
+    padding-left: 15px;
 }
-.picHome{
+
+.picHome {
     width: 70px;
     height: 70px;
     border-radius: 50%;
 }
-.fa-heart{
+
+.picHome-small {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.picHome-medium {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.right {
+    float: right;
+}
+
+.fa-heart {
     color: grey;
 }
-.blocInputTweet{
-    margin-bottom: 20px;
-    margin-top: 20px;
+.shortTweetbox{
+   position: relative;
+}
+.includePhotoTweet-shorten{
+position: absolute;
+right: 30px;
+top:7px;
+}
+
+.blocInputTweet, .blocInputTweet-shorten {
+    padding: 20px 35px;
     background-color: #EEEDF9;
 }
-.blocTweets{
+
+.blocTweets {
     margin-bottom: 20px;
-    margin-top: 20px;
-    background-color:white;
+    background-color: white;
+}
+
+.modal-body {
+    background-color: #EEEDF9;
+    border: none;
+}
+
+@media (min-width: 576px) {
+    .modal-dialog {
+        max-width: 700px;
+        margin: 1.75rem auto;
     }
+}

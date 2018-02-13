@@ -5,13 +5,21 @@
         initClicks();
       });
 
+      $("#shortTweetbox").click(function(){
+        console.log("clicked");
+        $(".blocInputTweet").show(),
+        $(".blocInputTweet-shorten").hide();
+    });
       function initClicks() {
-        $('.connect-button').click(function() {
-          initConnection($('.my-name').val());
+        $('#tweet').click(function() {
+          initConnection($('#twitterTextarea').val());
           initListeners();
         });
       }
-      $('#modalTwitter').modal()  
+      $('#modalTwitter').modal();
+
+      
+    
 
       function initConnection(name) {
         // (2) la connexion se fait qu'une seule fois par client
@@ -31,3 +39,4 @@
         // d'autres écouteurs peuvent être créés ici `socket.on(...);`
       }
    
+  

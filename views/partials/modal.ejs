@@ -1,21 +1,40 @@
 <!-- Button trigger modal -->
 <!-- Modal -->
-<div class="modal fade" id="modalTwitter" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalTwitter" tabindex="-1" role="dialog" aria-labelledby="twitterModalLabel" aria-hidden="true">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel">Ecrire un nouveau tweet</h5>
+				<h5 class="modal-title mx-auto" id="witterModalLabel">Écrire un nouveau tweet</h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
 			</div>
 			<div class="modal-body">
-				...
+				<div class="row">
+					<div class="col-md-1">
+						<div class="thumnail">
+							<img class="picHome-small" src="https://media-exp2.licdn.com/mpr/mpr/shrinknp_200_200/AAIA_wDGAAAAAQAAAAAAAAp0AAAAJGFlNWJkMzFhLWQ2ZWYtNGQ4Yy1iOWU5LTZkZjNkYWI3OTM0NA.jpg"
+							/>
+						</div>
+					</div>
+					<div class="col-md-11">
+						<form>
+							<div class="form-group">
+								<textarea class="form-control" id="twitterTextarea" rows="3" maxlength="280" placeholder=" Quoi de neuf ?"></textarea>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="row">
+					<div class="offset-md-1"></div>
+					<div class="col-md-11">
+						<span class="includePhotoTweet">
+							<i class="far fa-image fa-lg"></i>
+						</span>
+						<button type="button" id="tweet" class="btn btn-tweet right">Tweeter</button>
+					</div>
+				</div>
 			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-				<button type="button" class="btn btn-primary">Save changes</button>
-			</div>
-		</div>
 	</div>
+</div>
 </div>
